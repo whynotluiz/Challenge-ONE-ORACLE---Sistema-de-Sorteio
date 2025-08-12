@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Sistema de Sorteio</title>
+    <link rel="stylesheet" href="style-simple.css">
+</head>
+
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Amigo Secreto</h1>
+        </header>
+        
+        <section class="input-section">
+            <h2 class="section-title">Digite o nome dos seus amigos</h2>
+            
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="amigo" 
+                    class="input-name" 
+                    placeholder="Digite um nome aqui..."
+                >
+                <button 
+                    class="button-add" 
+                    onclick="adicionarAmigo()"
+                >
+                    Adicionar
+                </button>
+            </div>
+            
+            <div class="listas-container">
+                <div class="lista-amigos">
+                    <h3 class="lista-titulo">Lista de Amigos</h3>
+                    <ul id="listaAmigos" class="name-list"></ul>
+                </div>
+                
+                <div class="resultado-container">
+                    <h3 class="resultado-titulo">Resultado do Sorteio</h3>
+                    <ul id="resultado" class="result-list"></ul>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button 
+                    class="button-draw" 
+                    onclick="sortearAmigo()"
+                >
+                    Sortear Amigo
+                </button>
+            </div>
+        </section>
+        
+        <footer class="footer-info">
+            <p>Desenvolvido com carinho para tornar seu sorteio mais divertido!</p>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

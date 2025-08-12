@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Amigo Secreto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4B69FD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3a5fd8;
+        }
+        .lista {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 3px;
+        }
+        .btn-remover {
+            background: #f44336;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .resultado {
+            margin: 20px 0;
+            padding: 20px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste - Sistema de Amigo Secreto</h1>
+    
+    <div class="input-wrapper">
+        <input type="text" id="amigo" placeholder="Digite um nome">
+        <button onclick="adicionarAmigo()">Adicionar</button>
+    </div>
+    
+    <div class="lista">
+        <h3>Lista de Amigos</h3>
+        <ul id="listaAmigos"></ul>
+    </div>
+    
+    <button onclick="sortearAmigo()">Sortear Amigo</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        // Array para armazenar os nomes dos amigos
+        let listaAmigos = [];
+
+        // Elementos do DOM
+        const inputNome = document.getElementById('amigo');
+        const listaAmigosElement = document.getElementById('listaAmigos');
+        const resultadoElement = document.getElementById('resultado');
+
+        // Função para adicionar um amigo à lista
+        function adicionarAmigo() {
+            const nome = inputNome.value.trim();
+            
+            if (!nome) {
+                alert('Por favor, digite um nome válido!');
+                return;
+            }
+            
+            if (listaAmigos.includes(nome)) {
+                alert('Este nome já está na lista!');
+                return;
+            }
+            
+            listaAmigos.push(nome);
+            inputNome.value = '';
+            atualizarListaAmigos();
+            alert(`${nome} foi adicionado com sucesso!`);
+        }
+
+        // Função para atualizar a visualização da lista
+        function atualizarListaAmigos() {
+            if (listaAmigos.length === 0) {
+                listaAmigosElement.innerHTML = '<li>Nenhum amigo adicionado ainda.</li>';
+                return;
+            }
+            
+            listaAmigosElement.innerHTML = '';
+            
+            listaAmigos.forEach((nome, index) => {
+                const item = document.createElement('li');
+                item.className = 'item';
+                item.innerHTML = `
+                    <span>${nome}</span>
+                    <button class="btn-remover" onclick="removerAmigo(${index})">Remover</button>
+                `;
+                listaAmigosElement.appendChild(item);
+            });
+        }
+
+        // Função para remover um amigo
+        function removerAmigo(index) {
+            const nomeRemovido = listaAmigos[index];
+            listaAmigos.splice(index, 1);
+            atualizarListaAmigos();
+            alert(`${nomeRemovido} foi removido da lista.`);
+        }
+
+        // Função para sortear um amigo
+        function sortearAmigo() {
+            if (listaAmigos.length === 0) {
+                alert('Adicione pelo menos um amigo antes de fazer o sorteio!');
+                return;
+            }
+            
+            if (listaAmigos.length === 1) {
+                alert('Você precisa de pelo menos dois amigos para fazer um sorteio!');
+                return;
+            }
+            
+            const indiceSorteado = Math.floor(Math.random() * listaAmigos.length);
+            const amigoSorteado = listaAmigos[indiceSorteado];
+            
+            resultadoElement.innerHTML = `
+                <div class="resultado">
+                    <h3>Amigo Sorteado!</h3>
+                    <p style="font-size: 24px; font-weight: bold;">${amigoSorteado}</p>
+                    <p>Parabéns! ${amigoSorteado} foi escolhido!</p>
+                </div>
+            `;
+        }
+
+        // Inicializa a lista
+        atualizarListaAmigos();
+        
+        // Adiciona evento de Enter
+        inputNome.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                adicionarAmigo();
+            }
+        });
+        
+        // Foca no campo
+        inputNome.focus();
+    </script>
+</body>
+</html>

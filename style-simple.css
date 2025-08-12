@@ -1,0 +1,279 @@
+/* CSS Simplificado para Teste */
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+    --color-success: #4CAF50;
+    --color-error: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primary);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-white);
+    min-height: 100vh;
+}
+
+.header-banner {
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.main-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    background: var(--color-secondary);
+    padding: 40px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    gap: 0;
+}
+
+.input-name {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #000;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+.button-add {
+    padding: 15px 30px;
+    background: var(--color-tertiary);
+    color: var(--color-text);
+    border: 2px solid #000;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-add:hover {
+    background: #a1a1a1;
+}
+
+.listas-container {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.lista-amigos, .resultado-container {
+    background: var(--color-white);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lista-titulo, .resultado-titulo {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+}
+
+.name-list {
+    list-style: none;
+    min-height: 100px;
+}
+
+.lista-vazia {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+}
+
+.item-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    margin-bottom: 10px;
+}
+
+.nome-amigo {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.btn-remover {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.btn-remover:hover {
+    background: rgba(244, 67, 54, 0.1);
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-draw {
+    background: var(--color-button);
+    color: var(--color-white);
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.button-draw:hover {
+    background: #e55720;
+}
+
+.button-clear {
+    background: #ff9800;
+    color: var(--color-white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.button-clear:hover {
+    background: #e68900;
+}
+
+.result-list {
+    list-style: none;
+}
+
+.resultado-sorteio {
+    background: linear-gradient(135deg, var(--color-success), #45a049);
+    color: var(--color-white);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.amigo-sorteado h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.nome-sorteado {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.mensagem-sorteio {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.alerta, .mensagem-sucesso {
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alerta-erro {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+
+.mensagem-sucesso {
+    background-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.footer-info {
+    text-align: center;
+    padding: 20px;
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .input-wrapper {
+        flex-direction: column;
+    }
+    
+    .input-name {
+        border-radius: 15px 15px 0 0;
+        border-right: 2px solid #000;
+        border-bottom: none;
+    }
+    
+    .button-add {
+        border-radius: 0 0 15px 15px;
+        border-left: 2px solid #000;
+        border-top: none;
+    }
+    
+    .main-title {
+        font-size: 36px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
