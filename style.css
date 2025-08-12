@@ -14,7 +14,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +35,6 @@ body {
     margin: 0 auto;
 }
 
-/* Banner */
 .header-banner {
     background: var(--color-primary);
     color: var(--color-white);
@@ -45,7 +43,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Seção de entrada */
 .input-section {
     background-color: var(--color-secondary);
     border: 1px solid #000;
@@ -59,7 +56,6 @@ body {
     position: relative;
 }
 
-/* Títulos */
 .main-title {
     font-size: 48px;
     font-family: "Merriweather", serif;
@@ -78,7 +74,6 @@ body {
     text-align: center;
 }
 
-/* Contêineres de entrada e botão */
 .input-wrapper {
     display: flex;
     justify-content: center;
@@ -117,7 +112,6 @@ body {
     margin-top: 20px;
 }
 
-/* Estilos de botão */
 button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
@@ -144,7 +138,6 @@ button {
     box-shadow: var(--shadow-medium);
 }
 
-/* Botão de sortear título */
 .button-draw {
     display: flex;
     align-items: center;
@@ -170,7 +163,6 @@ button {
     box-shadow: var(--shadow-medium);
 }
 
-/* Botão limpar lista */
 .button-clear {
     background-color: var(--color-warning);
     color: var(--color-white);
@@ -185,7 +177,6 @@ button {
     transform: translateY(-2px);
 }
 
-/* Alertas e mensagens */
 .alerta, .mensagem-sucesso {
     position: relative;
     padding: 15px 20px;
@@ -228,7 +219,6 @@ button {
     transform: scale(1.1);
 }
 
-/* Listas */
 ul {
     list-style-type: none;
     color: var(--color-text);
@@ -239,7 +229,6 @@ ul {
     max-width: 600px;
 }
 
-/* Lista de amigos */
 .name-list {
     background: var(--color-white);
     border-radius: 15px;
@@ -295,7 +284,6 @@ ul {
     transform: scale(1.1);
 }
 
-/* Resultado do sorteio */
 .result-list {
     margin-top: 15px;
     text-align: center;
@@ -328,7 +316,6 @@ ul {
     opacity: 0.9;
 }
 
-/* Estados de animação */
 .sorteando {
     animation: pulse 1.5s infinite;
 }
@@ -337,7 +324,6 @@ ul {
     animation: bounceIn 0.8s ease;
 }
 
-/* Animações */
 @keyframes slideInDown {
     from {
         transform: translateY(-100%);
@@ -378,7 +364,6 @@ ul {
     }
 }
 
-/* Container das listas */
 .listas-container {
     width: 100%;
     max-width: 600px;
@@ -405,7 +390,6 @@ ul {
     padding-bottom: 10px;
 }
 
-/* Footer */
 .footer-info {
     text-align: center;
     padding: 20px;
@@ -421,7 +405,6 @@ ul {
     margin: 0;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .main-title {
         font-size: 36px;
@@ -536,14 +519,12 @@ ul {
     }
 }
 
-/* Melhorias de acessibilidade */
 button:focus,
 input:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
-/* Scrollbar personalizada */
 .input-section::-webkit-scrollbar {
     width: 8px;
 }

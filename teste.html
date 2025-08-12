@@ -81,15 +81,12 @@
     <div id="resultado"></div>
 
     <script>
-        // Array para armazenar os nomes dos amigos
         let listaAmigos = [];
 
-        // Elementos do DOM
         const inputNome = document.getElementById('amigo');
         const listaAmigosElement = document.getElementById('listaAmigos');
         const resultadoElement = document.getElementById('resultado');
 
-        // Função para adicionar um amigo à lista
         function adicionarAmigo() {
             const nome = inputNome.value.trim();
             
@@ -109,7 +106,6 @@
             alert(`${nome} foi adicionado com sucesso!`);
         }
 
-        // Função para atualizar a visualização da lista
         function atualizarListaAmigos() {
             if (listaAmigos.length === 0) {
                 listaAmigosElement.innerHTML = '<li>Nenhum amigo adicionado ainda.</li>';
@@ -129,7 +125,6 @@
             });
         }
 
-        // Função para remover um amigo
         function removerAmigo(index) {
             const nomeRemovido = listaAmigos[index];
             listaAmigos.splice(index, 1);
@@ -137,7 +132,6 @@
             alert(`${nomeRemovido} foi removido da lista.`);
         }
 
-        // Função para sortear um amigo
         function sortearAmigo() {
             if (listaAmigos.length === 0) {
                 alert('Adicione pelo menos um amigo antes de fazer o sorteio!');
@@ -161,17 +155,14 @@
             `;
         }
 
-        // Inicializa a lista
         atualizarListaAmigos();
         
-        // Adiciona evento de Enter
         inputNome.addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
                 adicionarAmigo();
             }
         });
         
-        // Foca no campo
         inputNome.focus();
     </script>
 </body>

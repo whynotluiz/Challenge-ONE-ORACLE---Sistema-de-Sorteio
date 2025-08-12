@@ -1,4 +1,3 @@
-/* CSS Simplificado para Teste */
 :root {
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
@@ -251,7 +250,6 @@ body {
     background: var(--color-primary);
 }
 
-/* Responsividade básica */
 @media (max-width: 768px) {
     .input-wrapper {
         flex-direction: column;
